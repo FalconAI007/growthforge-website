@@ -1,8 +1,11 @@
 # GrowthForge — AI Sales Agent Demo Website
 
 **Live Website:** https://growthforge-website.vercel.app
+
 **Dashboard:** https://growthforge-dashboard.vercel.app — Password: `growthforge2025`
+
 **Backend Repo:** https://github.com/FalconAI007/growthforge-backend
+
 **Dashboard Repo:** https://github.com/FalconAI007/growthforge-dashboard
 
 ---
