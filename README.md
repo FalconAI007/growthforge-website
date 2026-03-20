@@ -16,12 +16,15 @@ The problem Chanakya solves is real: local businesses lose leads every day becau
 ---
 
 **Screenshot:**
-- `screenshot-<img width="1922" height="831" alt="screenshot-homepage" src="https://github.com/user-attachments/assets/f50d52fe-76cb-4f9d-a0c3-64697a19f834" />
-homepage.png` — Full homepage with chat bubble visible in bottom right corner
-- `screenshot-<img width="1922" height="838" alt="screenshot-chat-open" src="https://github.com/user-attachments/assets/d795f862-c3d2-4c22-9f4a-9264e352b01a" />
-chat-open.png` — Chat widget open showing email and name capture screen
-- `screenshot-ch<img width="1922" height="832" alt="screenshot-chat-conversation" src="https://github.com/user-attachments/assets/11077cfb-dce7-4e84-8c81-b259dded238c" />
-at-conversation.png` — Active conversation with intent badge and stage progress bar visible
+
+![Homepage](https://github.com/user-attachments/assets/f50d52fe-76cb-4f9d-a0c3-64697a19f834)
+*GrowthForge homepage with Chanakya chat bubble visible in the bottom right corner*
+
+![Chat Open](https://github.com/user-attachments/assets/d795f862-c3d2-4c22-9f4a-9264e352b01a)
+*Chat widget open — email and name capture screen where every visitor is tracked from second one*
+
+![Conversation](https://github.com/user-attachments/assets/11077cfb-dce7-4e84-8c81-b259dded238c)
+*Active conversation showing intent badge and stage progress bar moving from Awareness to Considering*
 
 ---
 
