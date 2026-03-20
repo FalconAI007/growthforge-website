@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowthForge Media | Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .page-hero {
+            padding: 8rem 0 5rem;
+            background-color: var(--primary-navy);
+            color: var(--bg-white);
+            text-align: center;
+        }
+
+        .service-block {
+            padding: 6rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .service-block:nth-child(even) {
+            background-color: var(--bg-grey);
+        }
+
+        .service-block .grid-2 {
+            align-items: center;
+        }
+
+        /* Swap order for alternating layout on desktop */
+        .service-block:nth-child(even) .content-side {
+            order: 2;
+        }
+        .service-block:nth-child(even) .visual-side {
+            order: 1;
+        }
+
+        .service-visual {
+            background: var(--bg-white);
+            border-radius: 1rem;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-blue);
+        }
+
+        .service-visual svg {
+            width: 80px;
+            height: 80px;
+        }
+
+        .service-meta {
+            margin-top: 1.5rem;
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .service-meta h5 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-meta ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .service-meta ul li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+        .service-meta ul li::before {
+            content: '✓';
+            color: var(--success-green);
+            font-weight: bold;
+        }
+
+        .cta-section {
+            padding: 6rem 0;
+            text-align: center;
+            background: var(--bg-grey);
+        }
+
+        @media (max-width: 900px) {
+            .service-block:nth-child(even) .content-side { order: 1; }
+            .service-block:nth-child(even) .visual-side { order: 2; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Shared -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand">GrowthForge<span class="dot">.</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html" class="btn-primary">Book a Free Call</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn-primary">Book a Free Call</a>
+    </div>
+
+    <!-- Hero -->
+    <header class="page-hero">
+        <div class="container">
+            <h1 style="max-width: 800px; margin: 0 auto 1.5rem;">Everything You Need to Dominate Your Local Market</h1>
+            <p style="font-size: 1.25rem; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto;">At GrowthForge Media, we provide a comprehensive social media marketing solution specifically designed for local businesses. Our services work together as a unified system.</p>
+        </div>
+    </header>
+
+    <!-- Service 1: Facebook Ads -->
+    <section class="service-block">
+        <div class="container grid-2">
+            <div class="content-side">
+                <h2>Facebook Ads Management</h2>
+                <p>Strategic paid advertising on the Facebook platform designed to reach your ideal customers in your local area with high-converting creative.</p>
+                
+                <div class="service-meta">
+                    <h5>What's Included</h5>
+                    <ul>
+                        <li>Account setup & audience research</li>
+                        <li>Ad creative development & A/B testing</li>
+                        <li>Pixel setup & conversion tracking</li>
+                        <li>Daily budget optimization</li>
+                    </ul>
+                    
+                    <h5 style="margin-top: 1.5rem;">Target Outcomes</h5>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;"><strong>Cost per lead:</strong> $5 - $25<br><strong>Lead quality:</strong> 70%+ qualified<br><strong>Best for:</strong> Local service providers & professional services</p>
+                </div>
+            </div>
+            <div class="visual-side">
+                <div class="service-visual">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 2: Instagram Ads -->
+    <section class="service-block">
+        <div class="container grid-2">
+            <div class="content-side">
+                <h2>Instagram Ads & Storytelling</h2>
+                <p>Visual-first paid advertising on Instagram to reach customers through storytelling and engagement, focusing heavily on Reels and Carousel formats.</p>
+                
+                <div class="service-meta">
+                    <h5>What's Included</h5>
+                    <ul>
+                        <li>Instagram styling & branding optimization</li>
+                        <li>Visual content strategy (Stories, Reels)</li>
+                        <li>Audience targeting by behavior</li>
+                        <li>Shopping integration (if applicable)</li>
+                    </ul>
+                    
+                    <h5 style="margin-top: 1.5rem;">Target Outcomes</h5>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;"><strong>Cost per lead:</strong> $3 - $20<br><strong>Engagement rate:</strong> 3-8%<br><strong>Best for:</strong> Real estate, fitness, beauty, & lifestyle brands</p>
+                </div>
+            </div>
+            <div class="visual-side">
+                <div class="service-visual">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 3: Lead Generation Funnels -->
+    <section class="service-block">
+        <div class="container grid-2">
+            <div class="content-side">
+                <h2>End-to-End Lead Funnels</h2>
+                <p>Complete end-to-end funnel systems designed to capture, qualify, and deliver leads directly to your sales process automatically via CRM.</p>
+                
+                <div class="service-meta">
+                    <h5>What's Included</h5>
+                    <ul>
+                        <li>Lead magnet & offer creation</li>
+                        <li>Custom landing page design</li>
+                        <li>Email & SMS automated sequences</li>
+                        <li>CRM integration & lead scoring</li>
+                    </ul>
+                    
+                    <h5 style="margin-top: 1.5rem;">Target Outcomes</h5>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;"><strong>Landing page conversion:</strong> 15-40%<br><strong>Lead quality:</strong> 75%+ immediately actionable<br><strong>Best for:</strong> High-ticket services with longer sales cycles</p>
+                </div>
+            </div>
+            <div class="visual-side">
+                <div class="service-visual">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 4: Content Creation -->
+    <section class="service-block">
+        <div class="container grid-2">
+            <div class="content-side">
+                <h2>Strategic Content Creation</h2>
+                <p>Strategic copy, graphics, and video content that attracts, engages, and converts your target audience on social media, building trust and authority.</p>
+                
+                <div class="service-meta">
+                    <h5>What's Included</h5>
+                    <ul>
+                        <li>30-90 day content calendar</li>
+                        <li>Video editing & short-form production</li>
+                        <li>Conversion-focused copywriting</li>
+                        <li>A/B testing different content angles</li>
+                    </ul>
+                    
+                    <h5 style="margin-top: 1.5rem;">Target Outcomes</h5>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;"><strong>Engagement increase:</strong> 3-8x in 90 days<br><strong>Social proof:</strong> Viral/High-reach pieces monthly<br><strong>Best for:</strong> Building organic brand leverage</p>
+                </div>
+            </div>
+            <div class="visual-side">
+                <div class="service-visual">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 5: Ad Optimization -->
+    <section class="service-block">
+        <div class="container grid-2">
+            <div class="content-side">
+                <h2>Campaign Ad Optimization</h2>
+                <p>Continuous testing, refinement, and improvement of all your paid campaigns to maximize ROI and reduce your average cost per lead week over week.</p>
+                
+                <div class="service-meta">
+                    <h5>What's Included</h5>
+                    <ul>
+                        <li>Daily campaign spend monitoring</li>
+                        <li>Audience segment testing</li>
+                        <li>Bid strategy optimization</li>
+                        <li>Ad fatigue prevention & frequency caps</li>
+                    </ul>
+                    
+                    <h5 style="margin-top: 1.5rem;">Target Outcomes</h5>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;"><strong>Cost per lead reduction:</strong> 20-50% over 90 days<br><strong>Efficiency:</strong> 2-3x ROI by month 3<br><strong>Best for:</strong> Scaling campaigns profitably safely</p>
+                </div>
+            </div>
+            <div class="visual-side">
+                <div class="service-visual">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Phase -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="margin-bottom: 1.5rem;">Not sure which service is right for you?</h2>
+            <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 2rem;">Let's figure it out together. Book a quick, no-pressure strategy call and we'll audit your local market for free.</p>
+            <a href="contact.html" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Book a Free Strategy Call</a>
+        </div>
+    </section>
+
+    <!-- Footer Shared -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">GrowthForge<span class="dot">.</span></a>
+                    <p>Predictable Leads for Local Businesses. We build lead generation systems so you can scale with confidence and ease.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Facebook Ads</a></li>
+                        <li><a href="services.html">Instagram Ads</a></li>
+                        <li><a href="services.html">Lead Funnels</a></li>
+                        <li><a href="services.html">Content Creation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><a href="#">hello@growthforgemedia.com</a></li>
+                        <li><a href="#">1-800-555-GROW</a></li>
+                        <li>Operating Nationwide, USA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 GrowthForge Media. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

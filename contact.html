@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowthForge Media | Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .page-hero {
+            padding: 8rem 0 5rem;
+            background-color: var(--primary-navy);
+            color: var(--bg-white);
+            text-align: center;
+        }
+
+        .contact-section {
+            padding: 6rem 0;
+            background: var(--bg-grey);
+        }
+
+        .contact-card {
+            background: var(--bg-white);
+            border-radius: 1rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            display: flex;
+        }
+
+        .form-side {
+            flex: 1.5;
+            padding: 4rem;
+        }
+
+        .info-side {
+            flex: 1;
+            background: var(--primary-navy);
+            color: var(--bg-white);
+            padding: 4rem;
+            position: relative;
+        }
+
+        .info-side h3 {
+            color: var(--bg-white);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .benefit-list {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .benefit-list li {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .benefit-list li svg {
+            color: var(--success-green);
+            flex-shrink: 0;
+        }
+
+        .contact-details {
+            border-top: 1px dashed rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+        }
+
+        .contact-details p {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @media (max-width: 900px) {
+            .contact-card { flex-direction: column; }
+            .form-side, .info-side { padding: 2rem; }
+            .info-side { order: -1; } /* Info on top for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Shared -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand">GrowthForge<span class="dot">.</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html" class="btn-primary">Book a Free Call</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn-primary">Book a Free Call</a>
+    </div>
+
+    <!-- Hero -->
+    <header class="page-hero">
+        <div class="container">
+            <h1 style="max-width: 800px; margin: 0 auto 1.5rem;">Let's Build Your Lead Machine</h1>
+            <p style="font-size: 1.25rem; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto;">Book a free 30-minute strategy call. No commitment. Real advice.</p>
+        </div>
+    </header>
+
+    <!-- Contact Form -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-card">
+                
+                <!-- Form Side -->
+                <div class="form-side" id="formContainer">
+                    <h2 style="margin-bottom: 2rem;">Schedule Your Session</h2>
+                    
+                    <form id="contactForm">
+                        <div class="grid-2" style="gap: 1.5rem; margin-bottom: 1.5rem; display: flex; flex-wrap: wrap;">
+                            <div class="form-group" style="flex: 1; min-width: 200px;">
+                                <label class="form-label" for="fullName">Full Name</label>
+                                <input type="text" class="form-control" id="fullName" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group" style="flex: 1; min-width: 200px;">
+                                <label class="form-label" for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="john@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="grid-2" style="gap: 1.5rem; margin-bottom: 1.5rem; display: flex; flex-wrap: wrap;">
+                            <div class="form-group" style="flex: 1; min-width: 200px;">
+                                <label class="form-label" for="businessName">Business Name</label>
+                                <input type="text" class="form-control" id="businessName" placeholder="JD Plumbing" required>
+                            </div>
+                            <div class="form-group" style="flex: 1; min-width: 200px;">
+                                <label class="form-label" for="phone">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="(555) 123-4567" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="industry">Industry</label>
+                            <select class="form-control" id="industry" required>
+                                <option value="" disabled selected>Select your industry</option>
+                                <option value="plumbing">Plumbing/HVAC/Electrical</option>
+                                <option value="dental">Dental/Medical</option>
+                                <option value="realestate">Real Estate</option>
+                                <option value="fitness">Fitness/Wellness</option>
+                                <option value="other">Other Local Service</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="budget">Monthly Marketing Budget</label>
+                            <select class="form-control" id="budget" required>
+                                <option value="" disabled selected>Select approximate budget</option>
+                                <option value="under500">Under $500</option>
+                                <option value="500-1000">$500 – $1,000</option>
+                                <option value="1000-3000">$1,000 – $3,000</option>
+                                <option value="3000+">$3,000+</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">Anything else we should know? <span style="font-weight: 400; color: var(--text-muted);">(Optional)</span></label>
+                            <textarea class="form-control" id="message" placeholder="Tell us about your current lead generation efforts..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; margin-top: 1rem;">
+                            Book My Free Strategy Call
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info Side -->
+                <div class="info-side">
+                    <h3>Why Book a Call?</h3>
+                    <ul class="benefit-list">
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Free, absolutely no-obligation consultation
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Get a custom lead strategy tailored to your business
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Learn your specific market's average cost per lead
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Talk directly to a specialist, not a pushy salesperson
+                        </li>
+                    </ul>
+
+                    <div class="contact-details">
+                        <p>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            hello@growthforgemedia.com
+                        </p>
+                        <p>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            Mon-Fri, 9am - 6pm EST
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Shared -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">GrowthForge<span class="dot">.</span></a>
+                    <p>Predictable Leads for Local Businesses. We build lead generation systems so you can scale with confidence and ease.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Facebook Ads</a></li>
+                        <li><a href="services.html">Instagram Ads</a></li>
+                        <li><a href="services.html">Lead Funnels</a></li>
+                        <li><a href="services.html">Content Creation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><a href="#">hello@growthforgemedia.com</a></li>
+                        <li><a href="#">1-800-555-GROW</a></li>
+                        <li>Operating Nationwide, USA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 GrowthForge Media. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

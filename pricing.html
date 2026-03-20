@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowthForge Media | Simple Pricing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .page-hero {
+            padding: 8rem 0 5rem;
+            background-color: var(--primary-navy);
+            color: var(--bg-white);
+            text-align: center;
+        }
+
+        /* Pricing Cards Grid */
+        .pricing-section {
+            padding: 6rem 0;
+            background: var(--bg-grey);
+            margin-top: -2rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: -6rem;
+        }
+
+        .pricing-card {
+            background: var(--bg-white);
+            border-radius: 1rem;
+            padding: 2.5rem 1.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--accent-blue);
+            transform: translateY(-16px);
+            box-shadow: 0 20px 25px -5px rgba(30, 144, 255, 0.1), 0 10px 10px -5px rgba(30, 144, 255, 0.04);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-20px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-blue);
+            color: var(--bg-white);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 1rem;
+            border-radius: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .pkg-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .pkg-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.25rem;
+        }
+
+        .pkg-price span {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .pkg-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            min-height: 48px;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .pkg-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex: 1;
+        }
+
+        .pkg-features li {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .pkg-features li::before {
+            content: '✓';
+            color: var(--success-green);
+            font-weight: bold;
+        }
+
+        .pkg-btn {
+            width: 100%;
+        }
+
+        /* Philosophy */
+        .philosophy-section {
+            padding: 6rem 0;
+            background: var(--bg-white);
+        }
+
+        /* ROI Example */
+        .roi-section {
+            padding: 6rem 0;
+            background: var(--primary-navy);
+            color: var(--bg-white);
+            text-align: center;
+        }
+
+        .roi-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 3rem;
+            max-width: 800px;
+            margin: 3rem auto 0;
+            text-align: left;
+        }
+
+        .roi-equation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2rem 0;
+            padding: 2rem 0;
+            border-top: 1px dashed rgba(255, 255, 255, 0.2);
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .roi-stat {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .roi-stat span {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+        }
+
+        .roi-total {
+            color: var(--success-green);
+            font-size: 2.5rem;
+        }
+
+        /* Add-ons */
+        .addons-section {
+            padding: 6rem 0;
+            background: var(--bg-grey);
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .addon-item {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .addon-item-price {
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+
+        @media (max-width: 1024px) {
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); margin-top: 0; }
+            .pricing-card.featured { transform: translateY(0); }
+            .pricing-card.featured:hover { transform: translateY(-8px); }
+        }
+
+        @media (max-width: 600px) {
+            .pricing-grid, .addons-grid, .roi-equation { grid-template-columns: 1fr; }
+            .roi-equation { flex-direction: column; align-items: flex-start; }
+            .addon-item { flex-direction: column; text-align: center; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Shared -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand">GrowthForge<span class="dot">.</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html" class="btn-primary">Book a Free Call</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn-primary">Book a Free Call</a>
+    </div>
+
+    <!-- Hero -->
+    <header class="page-hero">
+        <div class="container">
+            <h1 style="max-width: 800px; margin: 0 auto 1.5rem;">Simple, Transparent Pricing</h1>
+            <p style="font-size: 1.25rem; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto;">You pay for results, not promises. No hidden fees, no lock-in surprises.</p>
+        </div>
+    </header>
+
+    <!-- Pricing Grid -->
+    <section class="pricing-section">
+        <div class="container pricing-grid">
+            
+            <!-- Starter -->
+            <div class="pricing-card">
+                <div class="pkg-name">Starter</div>
+                <div class="pkg-price">$750<span>/mo</span></div>
+                <div class="pkg-desc">$250 Management + $500 Ad Spend. Best for testing viability.</div>
+                <ul class="pkg-features">
+                    <li>Facebook Ads</li>
+                    <li>Basic Content Creation</li>
+                    <li>Weekly Lead Reporting</li>
+                    <li>Generate 25-50 leads/mo</li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline-dark pkg-btn">Get Started</a>
+            </div>
+
+            <!-- Growth (Featured) -->
+            <div class="pricing-card featured">
+                <div class="popular-badge">Most Popular</div>
+                <div class="pkg-name">Growth</div>
+                <div class="pkg-price">$2,150+<span>/mo</span></div>
+                <div class="pkg-desc">$600 Management + $1.5k Ad Spend. Powerful multi-channel scaling.</div>
+                <ul class="pkg-features">
+                    <li>Facebook & Instagram Ads</li>
+                    <li>Lead Generation Funnels</li>
+                    <li>Professional Content</li>
+                    <li>Weekly Strategy Calls</li>
+                    <li>Generate 60-150 leads/mo</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary pkg-btn">Get Started</a>
+            </div>
+
+            <!-- Premium -->
+            <div class="pricing-card">
+                <div class="pkg-name">Premium</div>
+                <div class="pkg-price">$4,000+<span>/mo</span></div>
+                <div class="pkg-desc">$900 Management + $3k Ad Spend. Aggressive local domination.</div>
+                <ul class="pkg-features">
+                    <li>Advanced Funnel Testing</li>
+                    <li>Video Content Creation</li>
+                    <li>Daily Optimization</li>
+                    <li>CRM Full Integration</li>
+                    <li>Generate 150-350+ leads/mo</li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline-dark pkg-btn">Get Started</a>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="pricing-card">
+                <div class="pkg-name">Enterprise</div>
+                <div class="pkg-price">Custom</div>
+                <div class="pkg-desc">For ad spends over $10k/month. Custom white-glove service.</div>
+                <ul class="pkg-features">
+                    <li>Custom Pricing Structure</li>
+                    <li>Dedicated Account Manager</li>
+                    <li>Advanced Market Research</li>
+                    <li>Multi-location Support</li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline-dark pkg-btn">Contact Us</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Our Pricing Philosophy</h2>
+            <div class="grid-3 text-center">
+                <div>
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Transparent</h3>
+                    <p>You know exactly what you're paying for. We clearly separate your direct ad spend from our management fees. Total clarity.</p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Scalable</h3>
+                    <p>Our model is designed to grow directly with your success. As your ad spend needs increase, our systems flex smoothly.</p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Performance-Based</h3>
+                    <p>We are fully invested in your results. You are paying for ROI and predictable lead pipelines, not simply "hours worked".</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI section -->
+    <section class="roi-section" id="results">
+        <div class="container">
+            <h2 style="margin-bottom: 1rem;">The Question isn't "Can we afford this?"</h2>
+            <p style="font-size: 1.25rem; color: rgba(255,255,255,0.7);">The true question is: "Can we afford NOT to do this?"</p>
+
+            <div class="roi-card">
+                <h3 style="margin-bottom: 1rem;">Real Case Example: Local Plumbing Service (Growth Package)</h3>
+                
+                <div class="roi-equation">
+                    <div class="roi-stat">
+                        <span>Ad Spend</span>
+                        $2,000
+                    </div>
+                    <div>+</div>
+                    <div class="roi-stat">
+                        <span>Agency Fee</span>
+                        $600
+                    </div>
+                    <div>=</div>
+                    <div class="roi-stat">
+                        <span>New Revenue (16 jobs)</span>
+                        <div class="roi-total">$24,000</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+                    <div>Average Job Value: $1,500</div>
+                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--success-green);">800% Total ROI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add ons -->
+    <section class="addons-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Popular Add-On Services</h2>
+            <div class="addons-grid">
+                <div class="addon-item">
+                    <div>
+                        <strong>Custom Landing Page Design</strong>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">High-converting, mobile-optimized custom funnel page</div>
+                    </div>
+                    <div class="addon-item-price">$800 - $2,000</div>
+                </div>
+                <div class="addon-item">
+                    <div>
+                        <strong>Video Production</strong>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Professional editing, scripting, and formatting</div>
+                    </div>
+                    <div class="addon-item-price">$500 - $2,000 / video</div>
+                </div>
+                <div class="addon-item">
+                    <div>
+                        <strong>Email Automation Setup</strong>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Zapier integration and custom drip sequences</div>
+                    </div>
+                    <div class="addon-item-price">$200 one-time</div>
+                </div>
+                <div class="addon-item">
+                    <div>
+                        <strong>Custom Reporting Dashboard</strong>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Real-time Looker Studio/Data Studio analytics</div>
+                    </div>
+                    <div class="addon-item-price">$300 - $600</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Shared -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">GrowthForge<span class="dot">.</span></a>
+                    <p>Predictable Leads for Local Businesses. We build lead generation systems so you can scale with confidence and ease.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Facebook Ads</a></li>
+                        <li><a href="services.html">Instagram Ads</a></li>
+                        <li><a href="services.html">Lead Funnels</a></li>
+                        <li><a href="services.html">Content Creation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><a href="#">hello@growthforgemedia.com</a></li>
+                        <li><a href="#">1-800-555-GROW</a></li>
+                        <li>Operating Nationwide, USA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 GrowthForge Media. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

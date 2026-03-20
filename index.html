@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowthForge Media | Predictable Leads for Local Businesses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Home Page Specific Styles */
+        .hero {
+            padding: 8rem 0 6rem;
+            background-color: var(--primary-navy);
+            color: var(--bg-white);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-bg-glow {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(30,144,255,0.15) 0%, rgba(13,27,42,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-card-mockup {
+            background: var(--bg-white);
+            color: var(--primary-navy);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            transform: rotate(2deg);
+        }
+
+        .stat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 196, 140, 0.1);
+            color: var(--success-green);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-large {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        
+        .client-name {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Social Proof Bar */
+        .social-proof {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-light);
+            text-align: center;
+        }
+        
+        .social-proof p {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+        }
+
+        .industry-row {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            opacity: 0.6;
+        }
+
+        .industry-item {
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* How It Works */
+        .step-card {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-blue);
+            color: var(--bg-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Services Grid */
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(30, 144, 255, 0.1);
+            color: var(--accent-blue);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+        }
+
+        .service-link {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+        .service-link:hover { padding-left: 0.25rem; }
+
+        /* Stats */
+        .stat-block {
+            text-align: center;
+        }
+        .stat-block .num {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        .stat-block .label {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Guarantee Banner */
+        .guarantee {
+            background-color: var(--accent-blue);
+            color: var(--bg-white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+        .guarantee h2 { margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .guarantee .btn { background: var(--bg-white); color: var(--accent-blue); }
+        .guarantee .btn:hover { background: var(--bg-grey); transform: translateY(-2px); }
+
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Shared -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand">GrowthForge<span class="dot">.</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html" class="btn-primary">Book a Free Call</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn-primary">Book a Free Call</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container grid-2">
+            <div>
+                <h1>More Leads.<br>Less Guesswork.<br>Guaranteed.</h1>
+                <p>GrowthForge Media helps local businesses generate consistent, qualified leads through hyper-targeted Facebook & Instagram Ads.</p>
+                <div class="hero-ctas">
+                    <a href="contact.html" class="btn btn-primary">Get a Free Strategy Call</a>
+                    <a href="pricing.html#results" class="btn btn-outline">See Our Results</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="stat-card-mockup">
+                    <div class="stat-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                        Up 1,928% ROI
+                    </div>
+                    <div class="stat-large">392</div>
+                    <div class="stat-label">Qualified Leads in 30 Days</div>
+                    <div class="client-name">
+                        <div style="width: 32px; height: 32px; background: var(--bg-grey); border-radius: 50%; display: flex; align-items: center; justify-content: center;">🔧</div>
+                        SafeFlow Plumbing
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof bg-grey">
+        <div class="container">
+            <p>Trusted by 150+ local businesses across 12+ industries</p>
+            <div class="industry-row">
+                <span class="industry-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> Financial</span>
+                <span class="industry-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg> Plumbing</span>
+                <span class="industry-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Real Estate</span>
+                <span class="industry-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg> Dental</span>
+                <span class="industry-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg> Fitness</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2>Our 3-Step System</h2>
+                <p style="max-width: 600px; margin: 0 auto;">Most agencies promise big numbers. We promise something better: predictable lead flow. Here's exactly how we do it.</p>
+            </div>
+            
+            <div class="grid-3">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Strategy</h3>
+                    <p>We analyze your market, competitors, and ideal customer to build a winning campaign plan designed specifically for your local area.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Execution</h3>
+                    <p>We launch targeted Facebook and Instagram ads with compelling creative that reach your ideal local customers right where they scroll.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Optimization</h3>
+                    <p>We relentlessly test, measure, and improve every aspect of the funnel until your leads are highly profitable and scaling predictably.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="section bg-grey">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h2>Complete Service System</h2>
+                    <p style="margin-bottom: 0;">Everything you need to dominate your local market end-to-end.</p>
+                </div>
+                <a href="services.html" class="btn btn-outline-dark">View All Services</a>
+            </div>
+
+            <div class="grid-3">
+                <div class="card service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </div>
+                    <h3>Facebook Ads</h3>
+                    <p>Strategic paid advertising to reach your ideal customers locally. Complete manager setup, daily monitoring, and A/B split testing.</p>
+                    <a href="services.html" class="service-link">Learn More &rarr;</a>
+                </div>
+                <div class="card service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </div>
+                    <h3>Instagram Ads</h3>
+                    <p>Visual-first paid advertising to reach customers through storytelling, carousels, and highly-engaging short-form video.</p>
+                    <a href="services.html" class="service-link">Learn More &rarr;</a>
+                </div>
+                <div class="card service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                    </div>
+                    <h3>Lead Generation Funnels</h3>
+                    <p>Complete systems designed to capture, qualify, and deliver leads automatically into your sales pipeline without friction.</p>
+                    <a href="services.html" class="service-link">Learn More &rarr;</a>
+                </div>
+                <div class="card service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                    </div>
+                    <h3>Content Creation</h3>
+                    <p>Strategic copy, graphics, and video editing that attract and convert your audience, building solid local authority.</p>
+                    <a href="services.html" class="service-link">Learn More &rarr;</a>
+                </div>
+                <div class="card service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    </div>
+                    <h3>Ad Optimization</h3>
+                    <p>Daily monitoring and bid strategy optimization. We reduce cost-per-lead and avoid ad fatigue through constant refinement.</p>
+                    <a href="services.html" class="service-link">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section bg-navy">
+        <div class="container grid-3">
+            <div class="stat-block">
+                <div class="num">150+</div>
+                <div class="label" style="color: rgba(255,255,255,0.7)">Local Clients Served</div>
+            </div>
+            <div class="stat-block">
+                <div class="num">92%</div>
+                <div class="label" style="color: rgba(255,255,255,0.7)">Client Retention Rate</div>
+            </div>
+            <div class="stat-block">
+                <div class="num">35-50%</div>
+                <div class="label" style="color: rgba(255,255,255,0.7)">Lead Cost Reduction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Banner -->
+    <section class="guarantee">
+        <div class="container">
+            <h2>Our 90-Day Guarantee: If we don't hit your lead targets, we work at 50% fee until we do.</h2>
+            <a href="contact.html" class="btn">Hold Us To It — Book a Call</a>
+        </div>
+    </section>
+
+    <!-- Footer Shared -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">GrowthForge<span class="dot">.</span></a>
+                    <p>Predictable Leads for Local Businesses. We build lead generation systems so you can scale with confidence and ease.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Facebook Ads</a></li>
+                        <li><a href="services.html">Instagram Ads</a></li>
+                        <li><a href="services.html">Lead Funnels</a></li>
+                        <li><a href="services.html">Content Creation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><a href="#">hello@growthforgemedia.com</a></li>
+                        <li><a href="#">1-800-555-GROW</a></li>
+                        <li>Operating Nationwide, USA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 GrowthForge Media. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
