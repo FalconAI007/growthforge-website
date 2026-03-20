@@ -15,20 +15,13 @@ The problem Chanakya solves is real: local businesses lose leads every day becau
 
 ---
 
-## Screenshots
-
-To add screenshots to this README, place your image files inside the repo root and reference them like this:
-
-```
-![Homepage](screenshot-homepage.png)
-![Chat Open](screenshot-chat-open.png)
-![Conversation](screenshot-chat-conversation.png)
-```
-
 **Screenshot:**
-- `screenshot-homepage.png` — Full homepage with chat bubble visible in bottom right corner
-- `screenshot-chat-open.png` — Chat widget open showing email and name capture screen
-- `screenshot-chat-conversation.png` — Active conversation with intent badge and stage progress bar visible
+- `screenshot-<img width="1922" height="831" alt="screenshot-homepage" src="https://github.com/user-attachments/assets/f50d52fe-76cb-4f9d-a0c3-64697a19f834" />
+homepage.png` — Full homepage with chat bubble visible in bottom right corner
+- `screenshot-<img width="1922" height="838" alt="screenshot-chat-open" src="https://github.com/user-attachments/assets/d795f862-c3d2-4c22-9f4a-9264e352b01a" />
+chat-open.png` — Chat widget open showing email and name capture screen
+- `screenshot-ch<img width="1922" height="832" alt="screenshot-chat-conversation" src="https://github.com/user-attachments/assets/11077cfb-dce7-4e84-8c81-b259dded238c" />
+at-conversation.png` — Active conversation with intent badge and stage progress bar visible
 
 ---
 
